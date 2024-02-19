@@ -15,6 +15,12 @@ form.addEventListener(
 
 form.addEventListener('submit', e => {
   e.preventDefault();
+
+  if (!email.value || !message.value) {
+    alert('Wypełnij wszystkie pola formularza!');
+    return;
+  }
+  
   console.log({ email: email.value, message: message.value });
   form.reset();
   localStorage.removeItem(LOCALSTORAGE_KEY);
